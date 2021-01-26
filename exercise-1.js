@@ -5,17 +5,29 @@
 
         //your code...
         function tekCamp() {}
-        // tekCamp();
-
-
+        for ( let i = 1; i<100; i++) {
+            if ((i%15) == 0){
+            console.log(`TEKcamp`);
+            } else if ((i%3) == 0 ) {
+            console.log(`TEK`); 
+            } else if ((i%5) == 0) {
+                console.log(`camp`) 
+            } else {
+                console.log(i);
+            }
+        }; 
+   console.log(tekCamp());
 
         /************************************************************************************/
         //Write a function that converts the current temperature from Fahrenheit to Celsius. 
 
         //your code...
-        function farenheitCelsius() {
+        function farenheitCelsius(f) {
+        const celsius = ((f-32)*5)/9;
+        console.log(celsius);
+        };
 
-        }
+        farenheitCelsius();
 
 
 
@@ -24,11 +36,12 @@
         //Write a function that converts the Celsius temperature back to Fahrenheit. 
 
         //your code...
-        function celsiusFarenheit() {
-
+        function celsiusFarenheit(c) {
+            const fareheit = ((9/5)*c)+32;
+            console.log(faren)
         }
 
-
+        celsiusFarenheit();
 
 
 
