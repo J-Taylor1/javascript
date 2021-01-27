@@ -141,15 +141,28 @@ const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // Write a "for" loop that console.log()'s the first value in the  array, and every 3rd number, i.e. 0, 3, 6, 9: the zeroth, third, sixth, and ninth values.
 
 //your code...
+for (i = 0; i < numbers.length; i+=3) {
+    console.log(numbers[i]);
+}
 
 
 
 /************************************************************************************/
 const foodArray = ['potatoes', 'tamales', 'lemon', 'strawberries', 'chocolate', 'pudding', { program: 'TEKcamp' }];
 //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
-
+foodArray[6] = {program: 'school'};
 const adjectiveArray = ['salty', 'spicy', 'sour', 'sweet', 'rich', 'creamy', 'amazing'];
 // Using both the foodArray and the adjectiveArray, write "for" loop that console.log()'s a sentence for each corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  i.e. "Potatoes are salty", "Lemon is sour".
+
+
+
+for (i=0; i < foodArray.length; i++)
+    var endS = foodArray[i];
+    if (endS.charCodeAt(endS.length-1) === 's') {
+        console.log(foodArray[i] + ' is ' + adjectiveArray[i]);
+    } else {
+        console.log(foodArray[i] + ' are ' + adjectiveArray[i]);
+    }
 
 
 /************************************************************* */
@@ -162,7 +175,11 @@ for (let i = 0; i < 10; i++) {
 
 
 //your code...
-
+let i=0;
+while ( i < 10) {
+    console.log(" the value of i in the loop is : " + i);
+    i++;
+}
 
 
 
@@ -171,6 +188,34 @@ for (let i = 0; i < 10; i++) {
 //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
 //your code...
+let sumVal = sum (30, 2)
+ function sum(a,b) {
+     return  a + b;
+    
+}
+
+console.log(sumVal);
+let multiVal = multiply20(sumVal);
+
+function multiply20 (x) {
+    return sumVal * 20;
+}
+
+console.log(multiVal);
+let productVal = product10(multiVal);
+
+function product10 (x) {
+    return multiVal / 10;
+}
+
+console.log(productVal); 
+let exponVal = expon2(productVal);
+
+function expon2(x) {
+    return productVal ** 2;
+};
+
+console.log(exponVal);
 
 
 /************************************************************* */
@@ -178,7 +223,7 @@ for (let i = 0; i < 10; i++) {
 
 // ex : 3 is truthy, because it is a number, and numbers are type coerced as 'true' when performing logical (boolean) operations.
 
-// 20
+// 20 
 // 0
 // "zero";
 // const zero = 20;
@@ -214,6 +259,26 @@ if (day === "monday") {
 }
 
 
+switch(day = "friday") {
+    case "monday":
+        console.log("we got a long week ahead of us...");
+        break;
+    case "tuesday":
+        console.log("tuesday's are still beterr than mondays, but LONG way to go still");
+        break;
+    case "wednesday":
+        console.log("We are smack dab in the middle of the week");
+        break;
+    case "thursday":
+        console.log("Thursday night... the mood is right");
+        break;
+    case "friday":
+        console.log("TGIF.  Friday truly is the best day of the week!");
+        break;
+    default:
+        console.log("It'a weekend!");
+}
+
 
 /************************************************************* */
 // Refactor the following statements to use ternary expressions:
@@ -222,14 +287,19 @@ const age = 10;
 if (age > 21) console.log("adult"); else {
     console.log("minor");
 }
+let workingAge = (age > 21) ? "adult" : "minor"; 
+
 
 if (age > 13 && age < 19) console.log('teen'); else {
     console.log("not a teenager");
 };
+workingAge = (age > 13 && age < 19) ? "teen" : "not a teen"; 
 
 if (age > 65) console.log("retired"); else {
     console.log("still working...");
 }
+workingAge = (age > 65) ? "retired" : "still working..."; 
+
 
 
 /************************************************************* */
