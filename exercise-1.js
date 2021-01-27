@@ -156,14 +156,18 @@ const adjectiveArray = ['salty', 'spicy', 'sour', 'sweet', 'rich', 'creamy', 'am
 
 
 
-for (i=0; i < foodArray.length; i++)
+for (i=0; i < foodArray.length; i++) {
     var endS = foodArray[i];
-    if (endS.charCodeAt(endS.length-1) === 's') {
+    
+    if (endS.charAt(endS.length-1).includes('s')) {
         console.log(foodArray[i] + ' is ' + adjectiveArray[i]);
     } else {
         console.log(foodArray[i] + ' are ' + adjectiveArray[i]);
     }
+}
 
+    for (i=0; i < foodArray.length; i++)
+    
 
 /************************************************************* */
 // Refactor the for() loop to be a while loop.
@@ -320,6 +324,21 @@ workingAge = (age > 65) ? "retired" : "still working...";
 
 //your code...
 
+var identify = {
+    name: "Jerboa Taylor",
+    age  : 25,
+    gender: "Male",
+    healthy: "yes",
+    hobbies: "watching anime",
+    profession: "bootcamp student",
+    education: "Associates",
+    learn : function() {
+      return this.name + " is learning Javascript";
+    },
+    bio : function() {
+    return "I like " + this.hobbies;
+    }
+  };
 
 
 /************************************************************* */
@@ -361,9 +380,11 @@ workingAge = (age > 65) ? "retired" : "still working...";
 
 const nums = [1, 2, 3, 4, 5];
 // Square every number in the array.  Store the squares in a new array.
-
+let sqrNums= [];
 //your code...
-
+for (i=0; i < nums.length ; i++) {
+     sqrNums[i] = Math.pow(nums[i],2);
+}
 
 
 
@@ -373,6 +394,11 @@ const fivePlus = [1, 3, 5, 7, 9, 1, 3, 5, 2, 3, 1, 23, 4, 232, 3, 4, 1, 2, 2, 2,
 
 //your code...
 
+let less5 = fivePlus.filter(myFunc);
+
+function myFunc(value,index,array) {
+	return value > 5;
+}
 
 
 
@@ -382,12 +408,23 @@ const fivePlus = [1, 3, 5, 7, 9, 1, 3, 5, 2, 3, 1, 23, 4, 232, 3, 4, 1, 2, 2, 2,
 
 //your code...
 
+let randomArr = [];
 
+for (let i = 0; i < 21; i++) {
+    randomArr[i] = Math.floor(Math.random() * 101);
+}
+
+var sum = randomArr.reduce(function(a,b){
+    return a + b;
+},0);
+
+console.log(sum);
 
 
 
 const showNums = [12, 22, 33, 44, 55, 66, 77, 88, 99, 101];
 //Print out the value of each number divided by 2.  There is no need to store the output in an array.
+showNums.forEach(element => console.log(element/2));
 
 
 
@@ -404,11 +441,17 @@ ex : ['iPhone','queen','pawn'] => chessCalc() => 10
 ['android'] => chessCalc() => null
 
 */
-
+let pieces = ['Pawn','Rook','Bishop','Knight','Queen','King'];
+let value = 0;
 function chessCalc(pieces) {
-    //your code here
-}
+    for (let i=0; i < pieces.length; i++) {
+        if (Array[i] = 'Pawn'){
+            value +=1;
+        } else {
+            value +=5;
+        }
 
+console.log(pieces([]));
 
 
 
@@ -416,9 +459,9 @@ function chessCalc(pieces) {
 
 const ones = [1, 11, 111, 1111, 11111, 111111, 1111111, 11111111, 111111111, 1111111111];
 //reverse the array, without modifying / `mutating` the ones array.
+const reverseOnes = [...ones].reverse();
 
-
-
+console.log(reverseOnes);
 /************************************************************* */
 //create a function called performer(cb) that takes in a callback function and runs that callback function.  The function should return the output of the callback function.
 
