@@ -469,8 +469,13 @@ let pieces = ['Pawn','Rook','Bishop','Knight','Queen','King'];
               } else {
                   value+=0;
               }
+              
             }
+            if (value == 0){
+                return null;
+            } else {
         return value;
+            }
       }
               
       console.log(chessCalc(pieces));
@@ -647,6 +652,8 @@ sortName.sort(function(a, b){return b-a});
 //your code here
 
 
+
+
 /************************** */
 // For the list of devs, print out sentences including the name and tech stack of each dev, leaving out other information.  Example output is provided below : 
 
@@ -658,10 +665,32 @@ Dr. Patel is not a developer.
 
 //your code here
 
+devs.forEach( dev => {
+    let sentence = dev.name;
+    if (dev['tech_stack']) {
+        sentence += ' specializes in ' + dev['tech_stack'].join(', ') + '.'    
+    } else sentence += ' is not developer.'
+    console.log(sentence);
+});
+
 
 /************************************************************* */
 // Write a function to find the maximum numerical value of the given array.  Get rid of any non numerical values.  Convert the strings that are numbers to an actual number data type.  ("one" => 1) ("1" => 1).  Use array methods to perform this task.  
 const numbersMixed = [2, 23, 1, 2, 1, 1, 1, 2, 2.5, 20, 200, 2000, , { k: "val" }, 20000, 19999, 1878, 140, 23, 4, "sk", true, true, "true-dat", "nice", "one", "two", "three", "3", "tea", []];
+
+// filters out non numerical.
+function numOnly(val) {
+    if (typeof(val) === 'number'){
+      return val;
+    }
+  }
+  
+  // filtered is [12, 130, 44
+  
+  console.log(filtered);
+
+
+
 
 function maxNumber(numbers) {
     //your code...
