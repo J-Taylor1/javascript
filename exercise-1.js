@@ -150,7 +150,8 @@ for (i = 0; i < numbers.length; i+=3) {
 /************************************************************************************/
 const foodArray = ['potatoes', 'tamales', 'lemon', 'strawberries', 'chocolate', 'pudding', { program: 'TEKcamp' }];
 //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
-foodArray[6] = {program: 'school'};
+foodArray[6] = 'school';
+console.log(foodArray[6]);
 const adjectiveArray = ['salty', 'spicy', 'sour', 'sweet', 'rich', 'creamy', 'amazing'];
 // Using both the foodArray and the adjectiveArray, write "for" loop that console.log()'s a sentence for each corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  i.e. "Potatoes are salty", "Lemon is sour".
 
@@ -165,9 +166,7 @@ for (i=0; i < foodArray.length; i++) {
         console.log(foodArray[i] + ' are ' + adjectiveArray[i]);
     }
 }
-
-    for (i=0; i < foodArray.length; i++)
-    
+  
 
 /************************************************************* */
 // Refactor the for() loop to be a while loop.
@@ -240,8 +239,15 @@ console.log(exponVal);
 // undefined
 // ""
 
+function truthyFalsy(x){
+    if (Boolean(x) == true) {
+        console.log(x + ' Because it is true');
+    } else {
+        console.log(x + ' Because it is false');
+    }
+    };
 
-
+console.log(truthyFalsy());
 
 /************************************************************* */
 // Refactor the following code using a switch statement:
@@ -400,7 +406,7 @@ function myFunc(value) {
 	return value > 5;
 }
 
-console.log(less5);
+console.log(less5)
 
 
 
@@ -609,20 +615,27 @@ console.log(devsGender);
 
 //your code here...
 
+let devsGender = [];
+for (let i=0; i < devs.length; i++) {
+	devsGender.push(devs[i].gender.toLowerCase());
 
+}
+console.log(devsGender);
 
 /************************** */
 // Sort the developers by name
 
 //your code here
 
+let sortName = devs.sort((a,b)=> a.name - b.name ? 1:-1);
 
+console.log(sortName);
 /************************** */
 // Sort the devs by age in descending order
 
 //your code here
 
-
+sortName.sort(function(a, b){return b-a});
 
 /************************** */
 // Sort the male coders by age
