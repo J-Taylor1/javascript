@@ -346,7 +346,7 @@ var identify = {
     }
   };
 
-
+console.log(identify.learn());
 /************************************************************* */
 
 {
@@ -363,23 +363,27 @@ var identify = {
     if (year > 2000 && year < 2100) {
         console.log("welcome to the 21st century");
     }
-
+    let century21 = (year > 2000 && year < 2100) ? "welcome to the 21st century" : "Not in the 21st century"; 
+    console.log(century21);
     // 2.
     for (let i = 0; i < nums.length; i++) {
         sum += nums[i];
     }
     console.log(sum);
 
-
+    function sumTot(total, num) {
+        return total + num
+    }
+    console.log(nums.reduce(sumTot));
     // 3.
     while (i < nums.length) {
         doubled.push(nums[i] * 2);
         i++;
     }
-
     console.log(doubled);
-}
 
+    let doubleEd = nums.map(x => x * 2);
+    console.log(doubleEd);
 
 /************************************************************* */
 // Use array methods to solve the following problems.
@@ -720,14 +724,22 @@ mutiple(3);
 //- Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.
 
 //your code
+var message = " is how much the stock has increased";
+function stockGain(basis, growth){
+    console.log(basis * growth);
+    return basis * growth;
+}
 
-
+    function growth(yrs) {
+        return 1.05**yrs;
+    }
+console.log(stockGain(500,growthI(5))-500 + message);
 // Once finished, declare a variable called futureValue that holds your stockGain function and enter any amount for the cost basis and a number for the number of years.  Run the function returned by the higher order function to display the future value of the stock.  
 
 //your code...
 
-
-
+var futureValue = stockGain(500,growthI(5));
+console.log(futureValue);
 // DO NOT DELETE THIS EXPORT
 module.exports = {
     tekCamp,
