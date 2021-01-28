@@ -292,7 +292,7 @@ if (age > 21) console.log("adult"); else {
     console.log("minor");
 }
 let workingAge = (age > 21) ? "adult" : "minor"; 
-
+console.log(workingAge);
 
 if (age > 13 && age < 19) console.log('teen'); else {
     console.log("not a teenager");
@@ -329,7 +329,7 @@ var identify = {
     age  : 25,
     gender: "Male",
     healthy: "yes",
-    hobbies: "watching anime",
+    hobbies: ["watching anime","hanging with family", "playing the game"],
     profession: "bootcamp student",
     education: "Associates",
     learn : function() {
@@ -396,11 +396,11 @@ const fivePlus = [1, 3, 5, 7, 9, 1, 3, 5, 2, 3, 1, 23, 4, 232, 3, 4, 1, 2, 2, 2,
 
 let less5 = fivePlus.filter(myFunc);
 
-function myFunc(value,index,array) {
+function myFunc(value) {
 	return value > 5;
 }
 
-
+console.log(less5);
 
 
 
@@ -441,17 +441,29 @@ ex : ['iPhone','queen','pawn'] => chessCalc() => 10
 ['android'] => chessCalc() => null
 
 */
-let pieces = ['Pawn','Rook','Bishop','Knight','Queen','King'];
-let value = 0;
-function chessCalc(pieces) {
-    for (let i=0; i < pieces.length; i++) {
-        if (Array[i] = 'Pawn'){
-            value +=1;
-        } else {
-            value +=5;
-        }
 
-console.log(pieces([]));
+let pieces = ['Pawn','Rook','Bishop','Knight','Queen','King'];
+    function chessCalc(pieces) {
+        let value = 0;
+        for (let i = 0; i < pieces.length; i++) {
+                 if (pieces[i] == 'Pawn'){
+                  value+=1;
+              } else if (pieces[i] == 'Rook'){
+                  value+=5;
+              } else if (pieces[i] == 'Bishop') {
+                value+=3;
+              } else if (pieces[i] == 'Knight') {
+                  value+=3;
+              } else if (pieces[i] == 'Queen') {
+                  value+=9;  
+              } else {
+                  value+=0;
+              }
+            }
+        return value;
+      }
+              
+      console.log(chessCalc(pieces));
 
 
 
@@ -539,13 +551,27 @@ const devs = [
 // Find all devs older than 24
 
 //your code here...
+let devs24Up = [];
 
-
+for (let i=0; i < devs.length; i++) {
+  if (devs[i].age > 24) {
+	devs24Up.push(devs[i]);
+  }
+}
+console.log(devs24Up);
 
 /************************** */
 // Remove all people who are not developers (i.e. no tech stack)
 
 //your code here...
+let devsNull = [];
+
+for (let i=0; i < devs.length; i++) {
+  if (devs[i].tech_stack !== null) {
+	devsNull.push(devs[i]);
+  }
+}
+console.log(devsNull);
 
 
 
@@ -553,6 +579,11 @@ const devs = [
 // Calculate the total age of all the devs
 
 //your code here...
+let total = 0;
+for (let i = 0; i < devs.length; i++) {
+	 total+=devs[i].age;  
+}
+console.log(total);
 
 
 
@@ -560,6 +591,17 @@ const devs = [
 // Find all female devs
 
 //your code here...
+let devsGender = [];
+
+for (let i=0; i < devs.length; i++) {
+  if (devs[i].gender !== 'm' && devs[i].gender !== "M") {
+	devsGender.push(devs[i]);
+  }
+}
+console.log(devsGender);
+
+
+
 
 
 /************************** */
@@ -648,8 +690,13 @@ const operations = [];
 function doMath(x, y) { };
 
 //your code...
-
-
+const fn = function (y) {
+    return y*3
+}
+const mutiple = function (x) {
+console.log(fn(x));
+}
+mutiple(3);
 
 /************************************************************* */
 //- Create a Higher Order Function called multiple(x) that takes a single parameter.  This HOF should return another function fn(y) that accepts another single parameter y.  This inner function should compute the product of it's parameter with the parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
