@@ -16,6 +16,14 @@
     button.addEventListener('click',function(){
         let clicked = document.getElementById("item").value;
         console.log(clicked);
+        document.querySelector("#item").value = " ";
+        const li = document.createElement('li');
+        const span = document.createElement('span');
+        const button2 = document.createElement('button');
+        li.appendChild(span, button2);
+        span.textContent = clicked;
+        button2.textContent = 'Delete';
+        ul.appendChild(li);
     })
 
     
@@ -25,9 +33,11 @@
     
     
     4. Next, empty the input element by setting its value to an empty string — ''.
+    */
     
-    
-    
+
+
+    /*
     5. Create three new elements — a list item (&lt;li&gt;), &lt;span&gt;, and &lt;button&gt;, and store them in variables.
     
     
