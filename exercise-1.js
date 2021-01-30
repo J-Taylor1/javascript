@@ -388,12 +388,12 @@ console.log(identify.learn());
 /************************************************************* */
 // Use array methods to solve the following problems.
 
-const nums = [1, 2, 3, 4, 5];
+const nums2 = [1, 2, 3, 4, 5];
 // Square every number in the array.  Store the squares in a new array.
 let sqrNums= [];
 //your code...
-for (i=0; i < nums.length ; i++) {
-     sqrNums[i] = Math.pow(nums[i],2);
+for (i=0; i < nums2.length ; i++) {
+     sqrNums[i] = Math.pow(nums2[i],2);
 }
 
 
@@ -424,11 +424,11 @@ for (let i = 0; i < 21; i++) {
     randomArr[i] = Math.floor(Math.random() * 101);
 }
 
-var sum = randomArr.reduce(function(a,b){
+var sumMed = randomArr.reduce(function(a,b){
     return a + b;
 },0);
 
-console.log(sum);
+console.log(sumMed);
 
 
 

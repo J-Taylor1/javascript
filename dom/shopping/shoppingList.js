@@ -19,11 +19,15 @@
         document.querySelector("#item").value = " ";
         const li = document.createElement('li');
         const span = document.createElement('span');
-        const button2 = document.createElement('button');
-        li.appendChild(span, button2);
+        const deleteButton = document.createElement('button');
+        li.append(span, deleteButton);
         span.textContent = clicked;
-        button2.textContent = 'Delete';
+        deleteButton.textContent = 'Delete';
         ul.appendChild(li);
+        deleteButton.addEventListener('click',function(){
+            li.remove();
+        })
+        document.getElementById("item").focus();
     })
 
     
