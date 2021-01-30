@@ -492,10 +492,16 @@ console.log(reverseOnes);
 /************************************************************* */
 //create a function called performer(cb) that takes in a callback function and runs that callback function.  The function should return the output of the callback function.
 
-function performer(cb) {
-    //code goes here
+function cb(name) {
+    console.log('hello this is ' + name + ' callbackfunction');
 }
 
+function performer(cb) {
+    //code goes here
+    cb("Jt's");
+}
+
+performer(cb);
 
 /************************************************************* */
 // For the given list of developers : 
@@ -644,15 +650,16 @@ console.log(sortName);
 
 //your code here
 
-sortName.sort(function(a, b){return b-a});
+let lowAge = devs.sort((a,b) => b.age - a.age);
+console.log(lowAge);
+
 
 /************************** */
 // Sort the male coders by age
 
 //your code here
-
-
-
+let maleSortAge = devs.filter(({gender}) => gender == 'm' || gennder == 'M').sort((a.b) => b.age - a.age);
+console.log(maleSortAge);
 
 /************************** */
 // For the list of devs, print out sentences including the name and tech stack of each dev, leaving out other information.  Example output is provided below : 
@@ -664,9 +671,8 @@ Dr. Patel is not a developer.
 */
 
 //your code here
-
+let sentence = dev.name;
 devs.forEach( dev => {
-    let sentence = dev.name;
     if (dev['tech_stack']) {
         sentence += ' specializes in ' + dev['tech_stack'].join(', ') + '.'    
     } else sentence += ' is not developer.'
@@ -678,23 +684,25 @@ devs.forEach( dev => {
 // Write a function to find the maximum numerical value of the given array.  Get rid of any non numerical values.  Convert the strings that are numbers to an actual number data type.  ("one" => 1) ("1" => 1).  Use array methods to perform this task.  
 const numbersMixed = [2, 23, 1, 2, 1, 1, 1, 2, 2.5, 20, 200, 2000, , { k: "val" }, 20000, 19999, 1878, 140, 23, 4, "sk", true, true, "true-dat", "nice", "one", "two", "three", "3", "tea", []];
 
-// filters out non numerical.
+// filters out non numerical.m
 function numOnly(val) {
     if (typeof(val) === 'number'){
       return val;
     }
   }
   
-  // filtered is [12, 130, 44
+const filtered = numbersMixed.filter(numOnly);
   
   console.log(filtered);
 
+ 
 
-
-
-function maxNumber(numbers) {
-    //your code...
+//your code...
+function maxNumber(x) {
+    return Math.max(...x);
 }
+
+console.log(maxNumber(filtered));
 
 //After the numbers array has been cleaned up to only have numbers in it, Write a function that sorts the modified numbers array.  Allow the function to sort the array in descending order as well.
 
@@ -748,6 +756,7 @@ mutiple(3);
 //- Create a Higher Order Function called multiple(x) that takes a single parameter.  This HOF should return another function fn(y) that accepts another single parameter y.  This inner function should compute the product of it's parameter with the parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
 
 //your code...
+
 
 
 //- Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.

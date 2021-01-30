@@ -1,15 +1,25 @@
 /*
     Do the following steps in this file, and make sure this file is linked to the shopping-list.html file
-
+    check
     
 
     1. Create three variables that hold references to the following elements &lt;ul&gt; &lt;input&gt; &lt;button&gt; elements.
-    
-    
+    */
+    const ul = document.querySelector('ul');
+    const input = document.querySelector('#item');
+    const button = document.querySelector('button');
+    console.log(button);
+    /*
     2. Create a function that will run in response to the button being clicked.
+    */
+   
+    button.addEventListener('click',function(){
+        let clicked = document.getElementById("item").value;
+        console.log(clicked);
+    })
+
     
-    
-    
+    /*
     3. Inside the function body, start off by storing the current value of the input element in a variable.
     
     
@@ -38,4 +48,4 @@
     
     
     
-    10. Finally, use the focus() method to focus the input element ready for entering the next shopping list item.
+    10. Finally, use the focus() method to focus the input element ready for entering the next shopping list item.*/
