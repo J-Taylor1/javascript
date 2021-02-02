@@ -714,10 +714,14 @@ function sortNums(numbers, desc = false) {
 
 /************************************************************* */
 //Research a new feature of ES6+ and create an example of it's use case here.  Be sure to write comments explaining what the feature is and why it is useful.
-
+"Const and Let varibles help make javascript more dynamic and gives programmers more control over what they create. Const is imutable meaning unable to be changed while let is mutable. One of the short-coming of 'var' was that it was a globally declared variable . const and let helps change this and limit the scope."
 
 //your code...
+const es6Const = 10;
+let es6Let = 6;
 
+const es6Const = 20; // can not be changed because const is immutable.
+let es6let = 20;
 
 
 /************************************************************* */
@@ -727,12 +731,14 @@ const mapObj = new Map();
 mapObj.set({ company: "TEKsystems" }, "object");
 
 console.log(mapObj.has({ company: "TEKsystems" }));
-
+console.log(mapObj);
 //The above console.log() statmeent returns false.  Write another console.log() statement explaining why this line of code prints false.  Refactor the code `mapObj.set()`, so the code : `mapObj.has() returns true.  The goal is to successfully check and see if {company : "TEKsystems"} exists in the mapObj.
 
 //your code...
+const mapObj = new Map();
+mapObj.set({ company: "TEKsystems" }, "object");
 
-
+console.log(mapObj.has({ company: "TEKsystems" }));
 //loop through the mapObj and create a new array of only the data types, leaving out the example keys of the mapObj.  Use array methods to do this.  Example output : ['string',number','boolean',array','object']
 
 
@@ -740,17 +746,36 @@ console.log(mapObj.has({ company: "TEKsystems" }));
 //Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly selects one of the mathematical operations whenever it is invoked.  The doMath() function should print to the console the mathetmatical function that was carried out.  The doMath() function should return the computed value of any operation performed.
 
 // ex : 2,3 => doMath(2,3) => adding : 5
-const operations = [];
-function doMath(x, y) { };
+
+let ranVal;
+
 
 //your code...
-const fn = function (y) {
-    return y*3
+const add = function (x,y) {
+    return  x+y;
 }
-const mutiple = function (x) {
-console.log(fn(x));
+
+const subtract = function (x,y) {
+    return  x-y;
 }
-mutiple(3);
+
+const multiply = function (x,y) {
+ return x*y;
+};
+
+const divide = function (x,y) {
+    return x/y;
+}
+const operations = [add(),subtract(),multiply(),divide()];
+
+function doMath(x, y) { 
+    let ranX = (Math.round(Math.random()*4));
+    ranVal = operations[ranX]
+    return ranVal;
+};
+
+
+console.log(doMath(5 , 10));
 
 /************************************************************* */
 //- Create a Higher Order Function called multiple(x) that takes a single parameter.  This HOF should return another function fn(y) that accepts another single parameter y.  This inner function should compute the product of it's parameter with the parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
