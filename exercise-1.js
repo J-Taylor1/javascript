@@ -752,25 +752,30 @@ let ranVal;
 
 //your code...
 const add = function (x,y) {
-    return  x+y;
+    
+    return 'Addition: ' + (x+y);
 }
 
 const subtract = function (x,y) {
-    return  x-y;
+    
+    return  'Subtract: ' + (x-y);
 }
 
 const multiply = function (x,y) {
- return x*y;
+    
+ return 'Multiply: ' + (x*y);
 };
 
 const divide = function (x,y) {
-    return x/y;
+    return 'Division: ' + (x/y);
+
 }
-const operations = [add(),subtract(),multiply(),divide()];
+
 
 function doMath(x, y) { 
-    let ranX = (Math.round(Math.random()*4));
-    ranVal = operations[ranX]
+    const operations = [add(x,y),subtract(x,y),multiply(x,y),divide(x,y)];
+    let ranX = (Math.floor(Math.random()*Math.floor(4)));
+    ranVal = operations[ranX];
     return ranVal;
 };
 
